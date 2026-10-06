@@ -1,0 +1,15 @@
+title: 'Possible System Binary Proxy Execution: Rundll32'
+technique: T1218.011
+description: 'Defense Evasion: System Binary Proxy Execution: Rundll32'
+selection:
+- field: Image
+  op: endswith
+  value: rundll32.exe
+filters:
+- field: CommandLine
+  op: contains_any
+  value:
+  - ' printui.dll,printuientry '
+  - ' shell32.dll,control_rundll '
+  - ' user32.dll,lockworkstation '
+level: medium

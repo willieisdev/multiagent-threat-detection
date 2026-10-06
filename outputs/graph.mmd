@@ -1,0 +1,35 @@
+---
+config:
+  flowchart:
+    curve: linear
+---
+graph TD;
+	__start__([<p>__start__</p>]):::first
+	gap_analyst(gap_analyst)
+	next_gap(next_gap)
+	rule_writer(rule_writer)
+	guardrail(guardrail)
+	tester(tester)
+	rule_fixer(rule_fixer)
+	accept(accept)
+	reject(reject)
+	reporter(reporter)
+	__end__([<p>__end__</p>]):::last
+	__start__ --> gap_analyst;
+	accept --> next_gap;
+	gap_analyst --> next_gap;
+	guardrail -.-> reject;
+	guardrail -.-> rule_fixer;
+	guardrail -.-> tester;
+	next_gap -.-> reporter;
+	next_gap -.-> rule_writer;
+	reject --> next_gap;
+	rule_fixer --> guardrail;
+	rule_writer --> guardrail;
+	tester -.-> accept;
+	tester -.-> reject;
+	tester -.-> rule_fixer;
+	reporter --> __end__;
+	classDef default fill:#f2f0ff,line-height:1.2
+	classDef first fill-opacity:0
+	classDef last fill:#bfb6fc

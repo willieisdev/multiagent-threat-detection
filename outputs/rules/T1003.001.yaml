@@ -1,0 +1,16 @@
+title: 'Possible OS Credential Dumping: LSASS Memory'
+technique: T1003.001
+description: 'Credential Access: OS Credential Dumping: LSASS Memory'
+selection:
+- field: CommandLine
+  op: contains_any
+  value:
+  - lsass
+  - ' sekurlsa::logonpasswords '
+  - comsvcs.dll
+filters:
+- field: CommandLine
+  op: contains_any
+  value:
+  - ' imagename '
+level: high

@@ -1,0 +1,153 @@
+{
+  "model": "offline-heuristic",
+  "gaps_found": [
+    "T1003.001",
+    "T1070.001",
+    "T1053.005",
+    "T1218.011"
+  ],
+  "coverage_dev_before": {
+    "T1003.001": 0.333,
+    "T1053.005": 0.0,
+    "T1059.001": 1.0,
+    "T1070.001": 0.0,
+    "T1218.011": 0.0
+  },
+  "coverage_dev_after": {
+    "T1003.001": 1.0,
+    "T1053.005": 1.0,
+    "T1059.001": 1.0,
+    "T1070.001": 1.0,
+    "T1218.011": 1.0
+  },
+  "coverage_holdout_before": {
+    "T1003.001": 0.333,
+    "T1053.005": 0.0,
+    "T1059.001": 1.0,
+    "T1070.001": 0.0,
+    "T1218.011": 0.0
+  },
+  "coverage_holdout_after": {
+    "T1003.001": 1.0,
+    "T1053.005": 1.0,
+    "T1059.001": 1.0,
+    "T1070.001": 1.0,
+    "T1218.011": 1.0
+  },
+  "benign_holdout_alerts_new_rules": 5,
+  "rules": [
+    {
+      "technique": "T1003.001",
+      "status": "accepted",
+      "attempts": 2,
+      "dev": {
+        "split": "dev",
+        "tp": 6,
+        "fn": 0,
+        "fp": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "fp_examples": [],
+        "fn_examples": [],
+        "passed": true
+      },
+      "holdout": {
+        "split": "holdout",
+        "tp": 3,
+        "fn": 0,
+        "fp": 2,
+        "precision": 0.6,
+        "recall": 1.0,
+        "fp_examples": [
+          "tasklist /svc | findstr lsass",
+          "wmic process where name=\"lsass.exe\" get processid"
+        ],
+        "fn_examples": []
+      }
+    },
+    {
+      "technique": "T1070.001",
+      "status": "accepted",
+      "attempts": 2,
+      "dev": {
+        "split": "dev",
+        "tp": 3,
+        "fn": 0,
+        "fp": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "fp_examples": [],
+        "fn_examples": [],
+        "passed": true
+      },
+      "holdout": {
+        "split": "holdout",
+        "tp": 2,
+        "fn": 0,
+        "fp": 1,
+        "precision": 0.667,
+        "recall": 1.0,
+        "fp_examples": [
+          "wevtutil epl Security C:\\Backup\\sec.evtx"
+        ],
+        "fn_examples": []
+      }
+    },
+    {
+      "technique": "T1053.005",
+      "status": "accepted",
+      "attempts": 1,
+      "dev": {
+        "split": "dev",
+        "tp": 4,
+        "fn": 0,
+        "fp": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "fp_examples": [],
+        "fn_examples": [],
+        "passed": true
+      },
+      "holdout": {
+        "split": "holdout",
+        "tp": 2,
+        "fn": 0,
+        "fp": 1,
+        "precision": 0.667,
+        "recall": 1.0,
+        "fp_examples": [
+          "schtasks /create /tn \"PatchTuesday\" /tr \"C:\\Program Files\\Patch\\p.exe\" /sc weekly"
+        ],
+        "fn_examples": []
+      }
+    },
+    {
+      "technique": "T1218.011",
+      "status": "accepted",
+      "attempts": 1,
+      "dev": {
+        "split": "dev",
+        "tp": 3,
+        "fn": 0,
+        "fp": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "fp_examples": [],
+        "fn_examples": [],
+        "passed": true
+      },
+      "holdout": {
+        "split": "holdout",
+        "tp": 2,
+        "fn": 0,
+        "fp": 1,
+        "precision": 0.667,
+        "recall": 1.0,
+        "fp_examples": [
+          "rundll32.exe url.dll,FileProtocolHandler https://example.com"
+        ],
+        "fn_examples": []
+      }
+    }
+  ]
+}
