@@ -1,0 +1,14 @@
+title: 'Possible Indicator Removal: Clear Windows Event Logs'
+technique: T1070.001
+description: 'Defense Evasion: Indicator Removal: Clear Windows Event Logs'
+selection:
+- field: Image
+  op: endswith
+  value: wevtutil.exe
+filters:
+- field: CommandLine
+  op: contains_any
+  value:
+  - ' /f:text '
+  - ' gl '
+level: high

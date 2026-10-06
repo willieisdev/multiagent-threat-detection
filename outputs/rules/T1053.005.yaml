@@ -1,0 +1,14 @@
+title: 'Possible Scheduled Task/Job: Scheduled Task'
+technique: T1053.005
+description: 'Persistence: Scheduled Task/Job: Scheduled Task'
+selection:
+- field: Image
+  op: endswith
+  value: schtasks.exe
+filters:
+- field: CommandLine
+  op: contains_any
+  value:
+  - ' /query '
+  - ' backupnightly '
+level: medium
