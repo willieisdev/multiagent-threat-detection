@@ -1,0 +1,7 @@
+[
+ {"id": "T1059.001", "name": "PowerShell", "tactic": "Execution", "severity": 3, "key_binary": "powershell.exe", "keyword": "-enc"},
+ {"id": "T1003.001", "name": "OS Credential Dumping: LSASS Memory", "tactic": "Credential Access", "severity": 5, "key_binary": null, "keyword": "lsass"},
+ {"id": "T1053.005", "name": "Scheduled Task/Job: Scheduled Task", "tactic": "Persistence", "severity": 3, "key_binary": "schtasks.exe", "keyword": "schtasks"},
+ {"id": "T1070.001", "name": "Indicator Removal: Clear Windows Event Logs", "tactic": "Defense Evasion", "severity": 4, "key_binary": "wevtutil.exe", "keyword": "wevtutil"},
+ {"id": "T1218.011", "name": "System Binary Proxy Execution: Rundll32", "tactic": "Defense Evasion", "severity": 3, "key_binary": "rundll32.exe", "keyword": "rundll32"}
+]
