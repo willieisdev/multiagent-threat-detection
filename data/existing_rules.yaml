@@ -1,0 +1,11 @@
+- title: Encoded PowerShell command
+  technique: T1059.001
+  selection:
+    - {field: Image, op: endswith, value: powershell.exe}
+    - {field: CommandLine, op: contains_any, value: ["-enc"]}
+  level: high
+- title: Mimikatz credential dumping
+  technique: T1003.001
+  selection:
+    - {field: CommandLine, op: contains_any, value: ["sekurlsa"]}
+  level: critical
